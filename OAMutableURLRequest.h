@@ -39,7 +39,7 @@
     OAToken *token;
     NSString *realm;
     NSString *signature;
-    id<OASignatureProviding> signatureProvider;
+    id<OASignatureProviding, NSObject> signatureProvider;
     NSString *nonce;
     NSString *timestamp;
 }

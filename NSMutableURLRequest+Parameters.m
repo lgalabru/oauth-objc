@@ -43,11 +43,11 @@
     }
     
     NSArray *encodedParameterPairs = [encodedParameters componentsSeparatedByString:@"&"];
-    NSMutableArray *requestParameters = [[NSMutableArray alloc] initWithCapacity:16];
+    NSMutableArray *requestParameters = [[[NSMutableArray alloc] initWithCapacity:16] autorelease];
     
     for (NSString *encodedPair in encodedParameterPairs) {
         NSArray *encodedPairElements = [encodedPair componentsSeparatedByString:@"="];
-        OARequestParameter *parameter = [[OARequestParameter alloc] initWithName:[[encodedPairElements objectAtIndex:0] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
+        OARequestParameter *parameter = [OARequestParameter requestParameterWithName:[[encodedPairElements objectAtIndex:0] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
                                                                            value:[[encodedPairElements objectAtIndex:1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         [requestParameters addObject:parameter];
     }
