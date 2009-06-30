@@ -1,5 +1,5 @@
 //
-//  OAMutableURLRequestTest.h
+//  OAuthConsumer.h
 //  OAuthConsumer
 //
 //  Created by Jon Crosby on 10/19/07.
@@ -23,26 +23,16 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-
-#import <SenTestingKit/SenTestingKit.h>
-#import "OAConsumer.h"
+#import <Foundation/Foundation.h>
 #import "OAToken.h"
+#import "OAConsumer.h"
 #import "OAMutableURLRequest.h"
-#import "OAPlaintextSignatureProvider.h"
+#import "NSString+URLEncoding.h"
+#import "NSMutableURLRequest+Parameters.h"
+#import "NSURL+Base.h"
+#import "OASignatureProviding.h"
 #import "OAHMAC_SHA1SignatureProvider.h"
-
-
-@interface OAMutableURLRequestTest : SenTestCase {
-    OAConsumer *consumer;
-    OAToken *token;
-    OAPlaintextSignatureProvider *plaintextProvider;
-    OAHMAC_SHA1SignatureProvider *hmacSha1Provider;
-    OAMutableURLRequest *plaintextRequest;
-    OAMutableURLRequest *hmacSha1Request;
-}
-
-- (void)testGenerateNonce;
-- (void)testSignatureBaseString;
-- (void)testSignature;
-
-@end
+#import "OAPlaintextSignatureProvider.h"
+#import "OARequestParameter.h"
+#import "OAServiceTicket.h"
+#import "OADataFetcher.h"

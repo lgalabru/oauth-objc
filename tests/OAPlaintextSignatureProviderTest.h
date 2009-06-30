@@ -24,7 +24,7 @@
 
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "OAPlaintextSignatureProvider.h"
+#import "OAuthConsumer/OAuthConsumer.h"
 
 
 @interface OAPlaintextSignatureProviderTest : SenTestCase

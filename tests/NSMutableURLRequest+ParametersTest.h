@@ -1,5 +1,5 @@
 //
-//  OAuthConsumer.h
+//  NSMutableURLRequest+ParametersTest.h
 //  OAuthConsumer
 //
 //  Created by Jon Crosby on 10/19/07.
@@ -23,16 +23,31 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <OAuthConsumer/OAToken.h>
-#import <OAuthConsumer/OAConsumer.h>
-#import <OAuthConsumer/OAMutableURLRequest.h>
-#import <OAuthConsumer/NSString+URLEncoding.h>
-#import <OAuthConsumer/NSMutableURLRequest+Parameters.h>
-#import <OAuthConsumer/NSURL+Base.h>
-#import <OAuthConsumer/OASignatureProviding.h>
-#import <OAuthConsumer/OAHMAC_SHA1SignatureProvider.h>
-#import <OAuthConsumer/OAPlaintextSignatureProvider.h>
-#import <OAuthConsumer/OARequestParameter.h>
-#import <OAuthConsumer/OAServiceTicket.h>
-#import <OAuthConsumer/OADataFetcher.h>
+#import <SenTestingKit/SenTestingKit.h>
+#import "OAuthConsumer/OAuthConsumer.h"
+
+@interface NSMutableURLRequest_ParametersTest : SenTestCase {
+    NSMutableURLRequest *requestWithoutParams;
+    NSMutableURLRequest *requestWithQueryParams;
+    NSMutableURLRequest *requestWithBodyParams;
+    NSArray *parameters;
+}
+
+- (void)testParametersForGETWithoutParameters;
+- (void)testParametersForGETWithParameters;
+- (void)testParametersForPOSTWithoutParameters;
+- (void)testParametersForPOSTWithParameters;
+- (void)testParametersForPUTWithoutParameters;
+- (void)testParametersForPUTWithParameters;
+- (void)testParametersForDELETEWithoutParameters;
+- (void)testParametersForDELETEWithParameters;
+- (void)testSetParametersForGETWithoutParameters;
+- (void)testSetParametersForGETWithParameters;
+- (void)testSetParametersForPOSTWithoutParameters;
+- (void)testSetParametersForPOSTWithParameters;
+- (void)testSetParametersForPUTWithoutParameters;
+- (void)testSetParametersForPUTWithParameters;
+- (void)testSetParametersForDELETEWithoutParameters;
+- (void)testSetParametersForDELETEWithParameters;
+
+@end

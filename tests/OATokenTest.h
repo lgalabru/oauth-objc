@@ -25,8 +25,7 @@
 
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "OAToken.h"
-#import "OAToken_KeychainExtensions.h"
+#import "OAuthConsumer/OAuthConsumer.h"
 
 
 @interface OATokenTest : SenTestCase {
@@ -40,7 +39,5 @@
 - (void)testInitWithKey;
 - (void)testInitWithKeychainUsingAppName;
 - (void)testInitWithHTTPResponseBody;
-- (void)testStoreInDefaultKeychainWithAppName;
-- (void)removeTestKeychainItem;
 
 @end

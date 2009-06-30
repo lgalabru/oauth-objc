@@ -48,21 +48,6 @@
     STAssertEqualObjects(aToken.secret, secret, @"Token secret was incorrect set to %@", aToken.secret);
 }
 
-- (void)testStoreInDefaultKeychainWithAppName {
-    int status = [token storeInDefaultKeychainWithAppName:appName serviceProviderName:serviceProviderName];
-    STAssertEquals(status, 0, @"Keychain insert failed with error status: %d", status);
-    [self removeTestKeychainItem];
-}
-
-- (void)testInitWithKeychainUsingAppName {
-    int status = [token storeInDefaultKeychainWithAppName:appName serviceProviderName:serviceProviderName];
-	STAssertEquals(status, 0, @"Keychain insert failed with error status: %d", status);
-    OAToken *aToken = [[OAToken alloc] initWithKeychainUsingAppName:appName serviceProviderName:serviceProviderName];
-    STAssertEqualObjects(aToken.key, @"123456", @"Token key was incorrectly populated as: %@", aToken.key);
-	STAssertEqualObjects(aToken.secret, @"abcdef", @"Token secret was incorrectly populated as: %@", aToken.secret);
-    [self removeTestKeychainItem];
-}
-
 - (void)removeTestKeychainItem {
 	SecKeychainItemRef item;
 	NSString *serviceName = [NSString stringWithFormat:@"%@::OAuth::%@", appName, serviceProviderName];

@@ -1,5 +1,5 @@
 //
-//  NSMutableURLRequest+ParametersTest.h
+//  NSString+URLEncodingTest.h
 //  OAuthConsumer
 //
 //  Created by Jon Crosby on 10/19/07.
@@ -24,30 +24,10 @@
 //  THE SOFTWARE.
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "NSMutableURLRequest+Parameters.h"
+#import "OAuthConsumer/OAuthConsumer.h"
 
-@interface NSMutableURLRequest_ParametersTest : SenTestCase {
-    NSMutableURLRequest *requestWithoutParams;
-    NSMutableURLRequest *requestWithQueryParams;
-    NSMutableURLRequest *requestWithBodyParams;
-    NSArray *parameters;
-}
+@interface NSString_URLEncodingTest : SenTestCase
 
-- (void)testParametersForGETWithoutParameters;
-- (void)testParametersForGETWithParameters;
-- (void)testParametersForPOSTWithoutParameters;
-- (void)testParametersForPOSTWithParameters;
-- (void)testParametersForPUTWithoutParameters;
-- (void)testParametersForPUTWithParameters;
-- (void)testParametersForDELETEWithoutParameters;
-- (void)testParametersForDELETEWithParameters;
-- (void)testSetParametersForGETWithoutParameters;
-- (void)testSetParametersForGETWithParameters;
-- (void)testSetParametersForPOSTWithoutParameters;
-- (void)testSetParametersForPOSTWithParameters;
-- (void)testSetParametersForPUTWithoutParameters;
-- (void)testSetParametersForPUTWithParameters;
-- (void)testSetParametersForDELETEWithoutParameters;
-- (void)testSetParametersForDELETEWithParameters;
+- (void)testEncodedURLParameterString;
 
 @end

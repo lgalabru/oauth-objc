@@ -25,7 +25,7 @@
 
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "OAConsumer.h"
+#import "OAuthConsumer/OAuthConsumer.h"
 
 
 @interface OAConsumerTest : SenTestCase

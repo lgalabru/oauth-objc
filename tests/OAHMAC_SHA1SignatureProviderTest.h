@@ -24,7 +24,7 @@
 
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "OAHMAC_SHA1SignatureProvider.h"
+#import "OAuthConsumer/OAuthConsumer.h"
 
 
 @interface OAHMAC_SHA1SignatureProviderTest : SenTestCase

@@ -1,5 +1,5 @@
 //
-//  NSString+URLEncodingTest.h
+//  OAMutableURLRequestTest.h
 //  OAuthConsumer
 //
 //  Created by Jon Crosby on 10/19/07.
@@ -23,11 +23,21 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+
 #import <SenTestingKit/SenTestingKit.h>
-#import "NSString+URLEncoding.h"
+#import "OAuthConsumer/OAuthConsumer.h"
 
-@interface NSString_URLEncodingTest : SenTestCase
+@interface OAMutableURLRequestTest : SenTestCase {
+    OAConsumer *consumer;
+    OAToken *token;
+    OAPlaintextSignatureProvider *plaintextProvider;
+    OAHMAC_SHA1SignatureProvider *hmacSha1Provider;
+    OAMutableURLRequest *plaintextRequest;
+    OAMutableURLRequest *hmacSha1Request;
+}
 
-- (void)testEncodedURLParameterString;
+- (void)testGenerateNonce;
+- (void)testSignatureBaseString;
+- (void)testSignature;
 
 @end
