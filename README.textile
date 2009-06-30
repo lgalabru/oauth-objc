@@ -1,0 +1,30 @@
+Integrating OAuthConsumer with your project
+
+OAuthConsumer is compiled as a static library, and the easiest way to add it to your project is to use Xcode's "dependent project" facilities.  Here is how:
+
+1. Clone the OAuthConsumer git repository: `git clone git://github.com/lgalabru/oauth-objc.git`. Make sure 
+   you store the repository in a permanent place because Xcode will need to reference the files
+   every time you compile your project.
+
+2. Locate the "OAuthConsumer.xcodeproj" file under "oauth-objc/src".  Drag OAuthConsumer.xcodeproj and drop it onto
+   the root of your Xcode project's "Groups and Files"  sidebar.  A dialog will appear -- make sure 
+   "Copy items" is unchecked and "Reference Type" is "Relative to Project" before clicking "Add".
+
+3. Now you need to link the OAuthConsumer static library to your project.  Click the "OAuthConsumer.xcodeproj" 
+   item that has just been added to the sidebar.  Under the "Details" table, you will see a single
+   item: libOAuthConsumer.a.  Check the checkbox on the far right of libOAuthConsumer.a.
+
+4. Now you need to add OAuthConsumer as a dependency of your project, so Xcode compiles it whenever
+   you compile your project.  Expand the "Targets" section of the sidebar and double-click your
+   application's target.  Under the "General" tab you will see a "Direct Dependencies" section. 
+   Click the "+" button, select "OAuthConsumer", and click "Add Target".
+
+5. Finally, we need to tell your project where to find the OAuthConsumer headers.  Open your
+   "Project Settings" and go to the "Build" tab. Look for "Header Search Paths" and double-click
+   it.  Add the relative path from your project's directory to the "oauth-objc/src" directory.
+
+6. While you are in Project Settings, go to "Other Linker Flags" under the "Linker" section, and
+   add "-ObjC" and "-all_load" to the list of flags.
+
+7. You're ready to go.  Just #import "OAuthConsumer/OAuthConsumer.h" anywhere you want to use OAuthConsumer classes
+   in your project.
