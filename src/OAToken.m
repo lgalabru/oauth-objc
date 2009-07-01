@@ -40,6 +40,18 @@
     return self;
 }
 
+- (id) initWithCoder: (NSCoder *)coder {
+	if (self = [super init]) {
+		[self setKey:[coder decodeObjectForKey:@"key"]];
+		[self setSecret:[coder decodeObjectForKey:@"secret"]];
+	}
+}
+
+- (void) encodeWithCoder: (NSCoder *)coder {
+	[coder encodeObject:key forKey:@"key"];
+	[coder encodeObject:secret forKey:@"secret"];
+}
+
 - (id)initWithKey:(NSString *)aKey secret:(NSString *)aSecret {
 	[super init];
 	self.key = aKey;
